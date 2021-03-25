@@ -1,0 +1,51 @@
+body{
+    position: relative; 
+}
+#nav 
+{
+    width:20%;
+    height:80vh;
+    overflow: scroll;
+    line-height:0.5px;
+}
+
+#content
+{
+    width:79%;
+    height:100vh;
+    overflow:scroll;
+    
+}
+.nav-link
+{
+    color:black;
+}
+.nav-link:hover{
+    color:rgb(255, 136, 0);
+    font-weight: bolder;
+}
+h3{
+    color:rgb(255, 136, 0); 
+}
+td{
+    width:20%;
+}
+li{
+    padding:5px;
+}
+hr{
+    width:100%;
+}
+.syntax
+{
+    border:1px solid rgb(224, 224, 224);
+    background-color:rgb(231, 231, 231);
+    width:55%;
+    padding:3px;
+    border-radius:5px;
+    
+}
+.float-right{
+    line-height: 2rem;
+    color:rgb(82, 80, 80);
+}

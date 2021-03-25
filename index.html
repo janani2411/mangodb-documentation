@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MangoDB Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="float-left" id="nav" style="width:20%;height:100vh" scrolling="yes">
+            <h2 class="bg-dark p-2 text-center" style="color:rgb(255, 136, 0);">MangoDB</h2>
+            <ul class="nav flex-column p-0 mt-3">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#content-start">Introduction</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                  <a class="nav-link" href="#rdbms-vs-mangodb">RDBMS VS MangoDB</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                  <a class="nav-link" href="#advantages">Advantages</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#why-mangodb">Why Use mangoDB ?</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#where-to-use">Where to use MangoDB ?</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#data-modelling">Data Modeling</a>
+                  </li>
+                  <hr>
+.                 <li class="nav-item">
+                    <a class="nav-link active" href="#create-database">Create Database</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#drop-database">Drop Database</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#create-collection">Create Collection</a>
+                  </li>
+                  <hr>
+.                        <li class="nav-item">
+                    <a class="nav-link" href="#drop-collection">Drop Collection</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#insert-document">Insert Document</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#query-document">Query Document</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#update-document">Update Document</a>
+                  </li>
+                  <hr>
+.                        <li class="nav-item">
+                    <a class="nav-link" href="#delete-document">Delete Document</a>
+                  </li>
+              </ul>
+        </div>
+
+        <div class="float-right" id="content">
+            <h2 class="bg-warning text-white text-center p-2" id="content-start">MANGODB DOCUMENTATION</h2>
+            <div id="introduction" class="mt-3 mb-5">
+                <h3>Introduction</h3>
+                <p>
+                    MongoDB is a cross-platform, document oriented database that provides, high performance,
+                    high availability, and easy scalability. MongoDB works on concept of collection and document.
+                    <br>
+                    <h5>Database</h5>
+                    <p>
+                    Database is a physical container for collections. Each database gets its own set of files on the
+                    file system. A single MongoDB server typically has multiple databases.
+                    </p>
+                    <br>
+                    <h5>Collection</h5>
+                    <p>
+                    Collection is a group of MongoDB documents. It is the equivalent of an RDBMS table. A
+                    collection exists within a single database. Collections do not enforce a schema. Documents
+                    within a collection can have different fields. Typically, all documents in a collection are of
+                    similar or related purpose.
+                    </p>
+                    <h5>Document</h5>
+                    <p>
+                    A document is a set of key-value pairs. Documents have dynamic schema. Dynamic schema
+                    means that documents in the same collection do not need to have the same set of fields or
+                    structure, and common fields in a collection's documents may hold different types of data.
+                </p>
+                </p>
+            </div>
+            <hr>
+           <div id="rdbms-vs-mangodb" class="mt-5 mb-5">
+            <h3>RDBMS vs MangoDB</h3>
+            <table class="table table-sm mt-4" style="width:50%">
+                <thead class="thead-dark text-center">
+                  <tr>
+                    <th scope="col">RDBM</th>
+                    <th scope="col">MangoDB</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Database</td>
+                    <td>Database</td>
+                  </tr>
+                  <tr>
+                    <td>Table</td>
+                    <td>Collection</td>
+                  </tr>
+                  <tr>
+                    <td>Tuple/Row</td>
+                    <td>Document</td>
+                  </tr>
+                  <tr>
+                    <td>Column</td>
+                    <td>Field</td>
+                  </tr>
+                  <tr>
+                    <td>Table Join</td>
+                    <td>Embedded Documents</td>
+                  </tr>
+                  <tr>
+                    <td>Primary Key</td>
+                    <td>Primary Key (Default key _id provided by
+                        mongodb itself)</td>
+                  </tr>
+                  <tr class="text-center">
+                    <th colspan="2">Database Server and Client</th>
+                  </tr>
+                  <tr>
+                    <td>MysQL/Oracle</td>
+                    <td>mangod</td>
+                  </tr>
+                </tbody>
+              </table>
+           </div>
+           <hr>
+           <div id="advantages" class="mt-5 mb-5">
+               <h3>Advantages of MangoDB Over RDBMs</h3>
+               <ul class="mt-4">
+                   <li>
+                    Schema less: MongoDB is a document database in which one collection holds different
+                    documents. Number of fields, content and size of the document can differ from one
+                    document to another.
+                   </li>
+                   <li>
+                    Structure of a single object is clear
+                   </li>
+                   <li>
+                    No complex joins.
+                   </li>
+                   <li>
+                    Deep query-ability. MongoDB supports dynamic queries on documents using a
+                    document-based query language that's nearly as powerful as SQL.
+                   </li>
+                   <li>
+                    Tuning.
+                   </li>
+                   <li>
+                    Ease of scale-out: MongoDB is easy to scale.
+                   </li>
+                   <li>
+                    Uses internal memory for storing the (windowed) working set, enabling faster access
+                    of data.
+                   </li>
+                   <li>
+                    Conversion/mapping of application objects to database objects not needed.
+                   </li>
+               </ul>
+           </div>
+           <hr>
+            <div id="why-mangodb" class="mt-5 mb-5">
+                <h3>Why use MangoDB ?</h3>
+               <ul class="mt-4">
+                   <li>
+                    Document Oriented Storage: Data is stored in the form of JSON style documents
+                   </li>
+                   <li>
+                    Index on any attribute
+                   </li>
+                   <li>
+                    Replication and high availability
+                   </li>
+                   <li>
+                    Auto-sharding
+                   </li>
+                   <li>
+                    Rich queries
+                   </li>
+                   <li>
+                    Fast in-place updates
+                   </li>
+            </div>
+            <hr>
+            <div id="where-to-use" class="mt-5 mb-5">
+                <h3>Where to use MangoDB ?</h3>
+               <ul class="mt-4">
+                   <li>
+                    Big Data
+                   </li>
+                   <li>
+                    Content Management and Delivery
+                   </li>
+                   <li>
+                    Mobile and Social Infrastructure
+                   </li>
+                   <li>
+                    User Data Management
+                   </li>
+                   <li>
+                    Data Hub
+                   </li>
+                   <li>
+                    Fast in-place updates
+                   </li>
+                   </ul>
+            </div>
+            <hr>
+            <div id="data-modelling" class="mt-3 mb-5">
+                <h3 class="mb-4 mt-5">Data Modelliing</h3>
+                <p>
+                    Data in MongoDB has a flexible schema.documents in the same collection. They do not need
+                    to have the same set of fields or structure, and common fields in a collection’s documents
+                    may hold different types of data.
+                    <br>
+                    <p><b>Some considerations while designing Schema in MongoDB :</b></p>
+                    <ul class="mt-4">
+                        <li>
+                            Design your schema according to user requirements.
+                        </li>
+                        <li>
+                            Combine objects into one document if you will use them together. Otherwise separate
+                            them (but make sure there should not be need of joins).
+                        </li>
+                        <li>
+                            Duplicate the data (but limited) because disk space is cheap as compare to compute
+                            time.
+                        </li>
+                        <li>
+                            Do joins while write, not on read.
+                        </li>
+                        <li>
+                            Optimize your schema for most frequent use cases.
+                        </li>
+                        <li>
+                            Do complex aggregation in the schema.
+                        </li>
+                        </ul>
+                </p>
+            </div>
+            <hr>
+            <div id="create-database" class="mt-3 mb-5">
+                <h3 class="mb-4 mt-5">Create Database</h3>
+                <p>
+                    MongoDB <b>use DATABASE_NAME</b> is used to 
+                    create database. The command will create a new database if it doesn't exist, 
+                    otherwise it will return the existing database.
+                    <br>
+                    <b>Syntax :</b>
+                    <p class="syntax">
+                        use Database_Name
+                    </p>
+                    To check your currently selected database, use the command db :
+                    <p class="syntax">
+                        db
+                    </p>
+                    If you want to check your databases list, use the command show dbs:
+                    <p class="syntax">
+                        show dbs
+                    </p>
+                </p>
+                </div>
+                <hr>
+                <div id="drop-database" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Drop Database</h3>
+                    <p>
+                        MongoDB <b>db.dropDatabase()</b> command is used to drop a existing database.
+                        <br>
+                        <b>Syntax :</b>
+                        <p class="syntax">
+                            db.dropDatabase()
+                        </p>
+                    </p>
+                </div>
+                <hr>
+                <div id="create-collection" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Create Collection</h3>
+                    <p>
+                        MongoDB <b>db.createCollection(name, options)</b> is used to create collection.
+                        <br>
+                        <b>Syntax :</b>
+                        <p class="syntax">
+                            db.createCollection(name, options)
+                        </p>
+                        Where ,<br>
+                        <b>name</b> = name of collection to be created.<br>
+                        <b>option</b> = document which is used to specify configuration of collection.
+                    </p>
+                </div>
+                <hr>
+                <div id="drop-collection" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Drop Collection</h3>
+                    <p>
+                        MongoDB's <b>db.collection.drop()</b> is used to drop a collection from the database.
+                        <br>
+                        <b>Syntax :</b>
+                        <p class="syntax">
+                            db.COLLECTION_NAME.drop()
+                        </p>
+                    </p>
+                </div>
+                <hr>
+                <div id="insert-document" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Insert Document</h3>
+                    <p>
+                        To insert data into MongoDB collection, you need to use MongoDB's <b>insert() or save()</b> method.
+                        <br>
+                        <b>Syntax :</b>
+                        <p class="syntax">
+                            db.COLLECTION_NAME.insert(document)
+                        </p>
+                    </p>
+                </div>
+                <hr>
+                <div id="query-document" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Query Document</h3>
+                    <p>
+                        To query data from MongoDB collection, you need to use MongoDB's <b>find()</b> method.
+                        <br>
+                        <b>Syntax :</b>
+                        <p class="syntax">
+                            db.COLLECTION_NAME.find()
+                        </p>
+                    </p>
+                </div>
+                <div id="update-document" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Update Document</h3>
+                    <p>
+                        MongoDB's update() and save() methods are used to update document into a collection. The update() method updates the values in
+                         the existing document while the save() method replaces the existing document with the document passed in save() method.
+                        
+                        <p>Using <b>update()</b> :
+                        <br>
+                        The update() method updates the values in the existing document.
+                        <br>
+                        <b>Syntax :</b>
+                        <br>
+                        <p class="syntax" style="width:55%">
+                            db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+                        </p>
+                        </p>
+                        <p>Using <b>save()</b> :
+                            <br>
+                            The save() method replaces the existing document with the new document passed in the save() method.
+                            <br>
+                            <b>Syntax :</b>
+                            <br>
+                            <p class="syntax">
+                                db.COLLECTION_NAME.save({_id:ObjectId(),NEW_DATA})
+                            </p>
+                        </p>
+                    </p>
+                </div>
+                <hr>
+                <div id="delete-document" class="mt-3 mb-5">
+                    <h3 class="mb-4 mt-5">Delete Document</h3>
+                    <p>
+                        MongoDB's <b>remove()</b> method is used to remove a 
+                        document from the collection. remove() method accepts two parameters. One is deletion criteria and second is justOne flag.
+                        <ul>
+                            <li>
+                                <b>deletion criteria</b> − (Optional) deletion criteria according to documents will be removed.
+                            </li>
+                            <li>
+                                <b>justOne</b> − (Optional) if set to true or 1, then remove only one document.
+                            </li>
+                        </ul>
+                        <br>
+                        <b>Syntax :</b>
+                        <p class="syntax">
+                            db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+                        </p>
+                    </p>
+                </div>
+        </div>
+        
+    </body>
+</html>
